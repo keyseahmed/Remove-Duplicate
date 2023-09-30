@@ -1,0 +1,14 @@
+
+FROM openjdk:11-jre-slim
+
+LABEL version="1.0"
+LABEL description="Docker image for RemoveDuplicate application"
+
+
+ARG JAR_FILE=target/RemoveDuplicate.jar
+
+
+COPY ${JAR_FILE} app.jar
+
+
+CMD ["java","-jar","/app.jar"]
